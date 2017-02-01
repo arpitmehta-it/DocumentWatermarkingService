@@ -45,7 +45,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>src.main.com.springer.WatermarkApplication</mainClass>
+                    <mainClass>com.springer.WatermarkApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
