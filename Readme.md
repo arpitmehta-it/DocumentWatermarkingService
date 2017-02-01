@@ -2,7 +2,8 @@ Document Watermarking Service
 
 Implemented as dummy implementation to perform watermarking operation on the document. 
 
-To start the service run main method of the com.springer.WatermarkApplication.java class. It will start the Spring Boot server.
+To start the service run main method of the "com.springer.WatermarkApplication.java" class. 
+It will start the Spring Boot server.
 
 Following assumption are taken while implementing the functionality : 
 1) Added three documents with id 1,2, and 3
