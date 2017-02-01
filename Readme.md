@@ -30,4 +30,4 @@ Following assumption are taken while implementing the functionality :
 		
 	Output of above command for example can looks like following: 
 	{"id":1,"title":"The Dark Code","author":"Bruce Wayne","watermark":{"content":"book","title":"The Dark Code","author":"Bruce Wayne","topic":"SCIENCE"},
-	"type":"book","ticketID":"fdb2853a-7d16-49c8-96f1-e8fdfa99926a","topic":"SCIENCE","content":null}
+	"type":"book","ticketID":"fdb2853a-7d16-49c8-96f1-e8fdfa99926a","topic":"SCIENCE","content":"book"}
