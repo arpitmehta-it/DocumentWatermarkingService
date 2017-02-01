@@ -7,7 +7,7 @@ import java.util.UUID;
  */
 public class Journal extends Document {
 
-  private String content;
+  private String content="journal";
 
   public Journal(final Long id, final String title, final String author, final Watermark watermark, final String type, final UUID ticketID)
   {
