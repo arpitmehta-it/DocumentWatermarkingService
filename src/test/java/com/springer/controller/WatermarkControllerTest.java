@@ -61,5 +61,77 @@ public class WatermarkControllerTest {
     UUID ticket = controller.setWaterMarkAndReturnTicket(23L);
     fail("should not reached here");
   }
+  
+    @Test(expected = Exception.class)
+  public void checkStatusWithIncorrectTicketNumber() throws Exception{
+    when(repository.getDocumentRepository()).thenReturn(documentRepository);
+    controller.setWaterMarkAndReturnTicket(12L);
+    fail("should not reached here");
+  }
+
+  @Test
+  public void checkStatusWithCorrectTicketNumberBeforeWaterMarkingFinishes(){
+    when(repository.getDocumentRepository()).thenReturn(documentRepository);
+    UUID ticket = null;
+    try {
+      ticket = controller.setWaterMarkAndReturnTicket(1L);
+      assertEquals(controller.checkStatus(ticket), "Watermarking in process");
+    } catch (Exception e ){
+      System.err.println(e.getMessage());
+    }
+  }
+
+  @Test
+  public void checkStatusWithCorrectTicketNumberAfterWaterMarkingFinishes(){
+    when(repository.getDocumentRepository()).thenReturn(documentRepository);
+    UUID ticket = null;
+    try {
+      ticket = controller.setWaterMarkAndReturnTicket(1L);
+      Thread.sleep(11000);
+      assertEquals(controller.checkStatus(ticket), "Watermarking process is complete");
+    } catch (Exception e ){
+      System.err.println(e.getMessage());
+    }
+  }
+
+  @Test
+  public void retrieveDocumentWithCorrectTicketNumber(){
+    when(repository.getDocumentRepository()).thenReturn(documentRepository);
+    UUID ticket = null;
+    try {
+      ticket = controller.setWaterMarkAndReturnTicket(1L);
+      Document document = controller.retrieveDocument(ticket);
+      assertNotNull(document);
+    } catch (Exception e ){
+      System.err.println(e.getMessage());
+    }
+  }
+
+
+  @Test
+  public void retrieveDocumentCheckBookTypeTicketNumber(){
+    when(repository.getDocumentRepository()).thenReturn(documentRepository);
+    UUID ticket = null;
+    try {
+      ticket = controller.setWaterMarkAndReturnTicket(1L);
+      Document document = controller.retrieveDocument(ticket);
+      assertTrue(document instanceof Book);
+    } catch (Exception e ){
+      System.err.println(e.getMessage());
+    }
+  }
+
+  @Test
+  public void retrieveDocumentCheckJournalTypeTicketNumber(){
+    when(repository.getDocumentRepository()).thenReturn(documentRepository);
+    UUID ticket = null;
+    try {
+      ticket = controller.setWaterMarkAndReturnTicket(3L);
+      Document document = controller.retrieveDocument(ticket);
+      assertTrue(document instanceof Journal);
+    } catch (Exception e ){
+      System.err.println(e.getMessage());
+    }
+  }
 
 }
