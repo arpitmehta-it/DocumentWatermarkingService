@@ -29,7 +29,7 @@ public class WatermarkServiceApiImpl{
       return m_controller.setWaterMarkAndReturnTicket(id);
     }
     catch (Exception e) {
-      System.out.println(e.getMessage());
+      System.err.println(e.getMessage());
       return null;
     }
   }
@@ -58,7 +58,7 @@ public class WatermarkServiceApiImpl{
       return  m_controller.retrieveDocument(ticket);
     }
     catch (Exception e) {
-      System.out.println(e.getMessage());
+      System.err.println(e.getMessage());
       return null;
     }
   }
