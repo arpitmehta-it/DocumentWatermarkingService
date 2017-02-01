@@ -8,6 +8,12 @@ It will start the Spring Boot server.
 Following assumption are taken while implementing the functionality : 
 1) Added three documents with id 1,2, and 3
    Document 1 and 2 are Book Object, while 3rd is the Journal object
+   Input document are following : 
+   {"id":1,"title":"The Dark Code","author":"Bruce Wayne","watermark":null, "type":"book","ticketID":null, "topic":"SCIENCE", "content":"book"}
+   {"id":2,"title":"How to make money","author":"Dr. Evil","watermark":null, "type":"book","ticketID":null, "topic":"BUSINESS", "content":"book"}
+   {"id":3,"title":"Journal of human flight routes","author":"Clark Kent","watermark":null, "type":"journal","ticketID":null, "topic":null, "content":"journal"}
+ 
+ Any of the id 1,2,3 are uased in step 2 to add watermark to document. 
    
 2) Adding the watermark to an object is following call : 
         localhost:8080/add/1 or localhost:8080/add/2
