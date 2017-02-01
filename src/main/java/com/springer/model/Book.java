@@ -6,7 +6,7 @@ import java.util.UUID;
  * Created by arpit on 2/1/17.
  */
 public class Book extends Document {
-  private String content;
+  private String content = "book";
   private Watermark.Topic topic;
 
   public Book(final Long id, final String title, final String author, final Watermark watermark, final String type, final UUID ticketID)
