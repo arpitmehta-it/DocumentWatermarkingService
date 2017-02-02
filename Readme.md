@@ -35,7 +35,7 @@ Following assumption are taken while implementing the functionality :
 3) To logically implement the processing time, every time at add watermarking request is sent, the first 10 seconds are the request is
    the processing time of the request. The status can be checked by following command: 
    
-   localhost:8080/checkStatus/<ticket>
+   localhost:8080/checkStatus/ticketID
 		
    Output of above command for example can looks like following:
 	
@@ -43,7 +43,7 @@ Following assumption are taken while implementing the functionality :
 		
 5) Finally the document can be retrieved by using following command:
 
-   localhost:8080/retrieveDocument/<ticket>
+   localhost:8080/retrieveDocument/ticketID
 		
    Output of above command for example can looks like following:
    
